@@ -35,9 +35,9 @@ Once the Docker containers are up and running, the application will be accessibl
 ## API Usage
 The application exposes various endpoints, such as:
 
-1./api/products - Manage Pokémon data.
+1./api/products - Manage Products data.
 
-2./api/orders - Manage Pokémon types.
+2./api/orders - Manage Products types.
 
 For detailed information about the API endpoints and usage, refer to the Swagger documentation available at 
 http://localhost:8080/api-docs
