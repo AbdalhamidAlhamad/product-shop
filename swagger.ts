@@ -1,4 +1,5 @@
 // src/swagger.ts
+import { CreateProductRequestDto } from "./dtos/request";
 import swaggerJsdoc from "swagger-jsdoc";
 
 const swaggerDefinition = {
@@ -14,9 +15,49 @@ const swaggerDefinition = {
       description: "Development server",
     },
   ],
-  tags: [],
+  tags: [
+    {
+      name: "Products",
+      description: "API for products in the system",
+    },
+    {
+      name: "Images",
+      description: "API for images in the system",
+    },
+  ],
   components: {
-    schemas: {},
+    schemas: {
+      CreateProductRequest: {
+        type: "object",
+        properties: {
+          name: {
+            type: "string",
+            description: "Name of the product",
+            example: "Product 1",
+          },
+          description: {
+            type: "string",
+            description: "Description of the product",
+            example: "This is a product",
+          },
+          quantity: {
+            type: "integer",
+            description: "Quantity of the product",
+            example: 10,
+          },
+          price: {
+            type: "number",
+            description: "Price of the product",
+            example: 100.0,
+          },
+          imageUrl: {
+            type: "string",
+            description: "Image URL of the product",
+            example: "https://example.com/image.png",
+          },
+        },
+      },
+    },
   },
   // ...
 };
