@@ -29,7 +29,7 @@ npm run start
 
 
 ### 3. Accessing the Application
-Once the Docker containers are up and running, the application will be accessible at http://localhost:8080
+Once the application  is up and running, the application will be accessible at http://localhost:8080
 
 
 ## API Usage
