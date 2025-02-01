@@ -4,7 +4,6 @@ import { createOrderValidator, orderQueryValidator, updateOrderStatusValidator }
 import ErrorHandler from "../utils/errorHandler";
 import { OrderService } from "../services";
 import { OrderResponseDto } from "../dtos/response";
-import { OrdersFiltersRequestDto } from "dtos/request/orders-filters.request.dto";
 
 export const createOrderCtrl = expressAsyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {

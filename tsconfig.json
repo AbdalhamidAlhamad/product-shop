@@ -15,7 +15,6 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "resolveJsonModule": true,
-    "baseUrl": "./",
   },
 
 }
