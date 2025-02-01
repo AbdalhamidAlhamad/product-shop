@@ -3,9 +3,11 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { Order } from "./order.entity";
 
 @Entity("products")
 export class Product {
@@ -24,8 +26,11 @@ export class Product {
   @Column({ type: "decimal", precision: 10, scale: 2, name: "price" })
   price!: number;
 
-  @Column({ type: "text", name: "image_url"})
+  @Column({ type: "text", name: "image_url" })
   imageUrl!: string;
+
+  @OneToMany(() => Order, (order) => order.product)
+  orders!: Order[];
 
   @CreateDateColumn({ type: "timestamp with time zone", name: "created_at" })
   createdAt!: Date;

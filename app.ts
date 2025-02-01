@@ -8,13 +8,12 @@ import xss from "xss-clean";
 import cors from "cors";
 import { rateLimit } from "express-rate-limit";
 import { notFound } from "./middlewares/not-found";
-import { imageRouter, productRouter } from "./routes";
+import { imageRouter, orderRouter, productRouter } from "./routes";
 import path from "path";
 
 dotenv.config();
 
 const app = express();
-
 
 // cors
 app.use(
@@ -40,10 +39,11 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-
 app.use("/api/products", productRouter);
 
-app.use("/api/images", imageRouter );
+app.use("/api/orders", orderRouter);
+
+app.use("/api/images", imageRouter);
 
 app.use(notFound);
 
